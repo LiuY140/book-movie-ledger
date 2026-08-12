@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============ 设计令牌 — 从原型移植 ============ */
+:root {
+  --paper: #F6F3EE;
+  --card: #FFFDF9;
+  --ink: #2B2A26;
+  --ink2: #6F6A5E;
+  --ink3: #A39D90;
+  --line: #E7E1D4;
+  --line2: #EFEAE0;
+  --green: #2E5E4E;
+  --green-deep: #23493C;
+  --green-ink: #1C3A2F;
+  --green-soft: #E7EEE9;
+  --amber: #C07A2E;
+  --amber-deep: #9C5F22;
+  --amber-soft: #F7EDE0;
+  --done: #3E7C59;
+  --doing: #C07A2E;
+  --want: #6B7A99;
+  --give: #9A958B;
+  --done-soft: #E5F0E9;
+  --doing-soft: #F7EDE0;
+  --want-soft: #E9EDF4;
+  --give-soft: #EFEEE9;
+  --star: #E0A33A;
+  --r-lg: 18px;
+  --r-md: 12px;
+  --r-sm: 8px;
+  --shadow: 0 1px 2px rgba(43,42,38,.04), 0 8px 24px -12px rgba(43,42,38,.14);
+  --shadow-lift: 0 2px 6px rgba(43,42,38,.06), 0 18px 44px -16px rgba(43,42,38,.22);
+  --serif: Georgia, "Songti SC", "STSong", "Noto Serif SC", "SimSun", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+  --sidebar-w: 216px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #D8D1C2; border-radius: 6px; border: 2px solid var(--paper); }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ============ 组件类 ============ */
+@layer components {
+  .card {
+    @apply bg-[#FFFDF9] border border-[#EFEAE0] rounded-[18px] shadow-[0_1px_2px_rgba(43,42,38,.04),0_8px_24px_-12px_rgba(43,42,38,.14)];
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-[7px] px-5 py-[9px] rounded-[10px] text-[13.5px] font-semibold transition-all duration-150 cursor-pointer border-none;
+  }
+  .btn-primary { @apply bg-[#2E5E4E] text-white; }
+  .btn-primary:hover { @apply bg-[#23493C] shadow-[0_4px_14px_rgba(46,94,78,.3)]; }
+  .btn-ghost { @apply border border-[#2E5E4E] text-[#2E5E4E] bg-transparent; }
+  .btn-ghost:hover { @apply bg-[#E7EEE9]; }
+  .btn-soft { @apply bg-[#E7EEE9] text-[#2E5E4E]; }
+  .btn-amber { @apply bg-[#C07A2E] text-white; }
+  .btn-amber:hover { @apply bg-[#9C5F22]; }
+  .btn-danger-ghost { @apply border border-[#D8B4B4] text-[#B05656] bg-transparent; }
+  .btn-danger-ghost:hover { @apply bg-[#F9ECEC]; }
+  .btn:disabled { @apply opacity-50 cursor-not-allowed; }
+
+  .pill {
+    @apply inline-flex items-center gap-[5px] px-[13px] py-[5px] rounded-full text-[12.5px] border border-[#E7E1D4] bg-[#FFFDF9] text-[#6F6A5E] transition-all whitespace-nowrap cursor-pointer;
+  }
+  .pill:hover { @apply border-[#A39D90] text-[#2B2A26]; }
+  .pill.active { @apply bg-[#2E5E4E] border-[#2E5E4E] text-white font-medium; }
+
+  .tag {
+    @apply inline-flex items-center gap-[4px] px-[9px] py-[2px] rounded-full text-[11px] font-medium;
+  }
+  .tag-done { @apply bg-[#E5F0E9] text-[#3E7C59]; }
+  .tag-doing { @apply bg-[#F7EDE0] text-[#C07A2E]; }
+  .tag-want { @apply bg-[#E9EDF4] text-[#6B7A99]; }
+  .tag-give { @apply bg-[#EFEEE9] text-[#9A958B]; }
+  .tag-type { @apply bg-[#E7EEE9] text-[#2E5E4E]; }
+
+  .input {
+    @apply w-full px-[13px] py-[9px] border border-[#E7E1D4] rounded-[10px] bg-[#FFFDF9] text-[#2B2A26] text-[14px] transition-all outline-none;
+  }
+  .input:focus { @apply border-[#2E5E4E] shadow-[0_0_0_3px_rgba(46,94,78,.12)]; }
+
+  .section-title {
+    @apply font-serif text-[16px] font-bold mb-[14px] flex items-center gap-[8px];
+  }
+  .section-title::before {
+    content: "";
+    @apply w-[3px] h-[15px] bg-[#C07A2E] rounded-[2px];
+  }
+}
+
+/* 动画 */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-fade-up { animation: fadeUp .32s ease; }
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(.95) translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
