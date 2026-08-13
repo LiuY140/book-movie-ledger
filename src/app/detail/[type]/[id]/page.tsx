@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import TopBar from '@/components/TopBar';
 import StatusBadge from '@/components/StatusBadge';
@@ -13,7 +13,8 @@ import { BOOK_STATUS_META, MOVIE_STATUS_META } from '@/types';
 import { proxyCover } from '@/lib/cover';
 import type { Book, Movie, BookStatus, MovieStatus } from '@/types';
 
-export default function DetailPage({ params }: { params: { type: string; id: string } }) {
+export default function DetailPage() {
+  const params = useParams<{ type: string; id: string }>();
   const { type, id } = params;
   const router = useRouter();
   const { openModal } = useModal();

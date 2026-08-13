@@ -5,7 +5,11 @@
 
 # next.js
 .next*
+/open-next/
 /out/
+
+# backup dirs
+node_modules.bak.*
 
 # workbuddy internal
 /.workbuddy/

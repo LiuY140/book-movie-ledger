@@ -17,16 +17,16 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
     "lru-cache": "^11.5.2",
-    "next": "^14.2.35",
+    "next": "^15.5.23",
     "pinyin-pro": "^3.28.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "^1.20.2",
     "@types/node": "^20.14.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",

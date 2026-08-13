@@ -20,9 +20,9 @@ const UA =
 
 export async function GET(
   _request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const doubanId = params.id;
+  const { id: doubanId } = await params;
   if (!doubanId) {
     return NextResponse.json({ error: '缺少豆瓣条目 ID' }, { status: 400 });
   }
