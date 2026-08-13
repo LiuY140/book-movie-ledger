@@ -6,3 +6,8 @@ main = ".open-next/worker.js"
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
+
+[vars]
+NEXT_PUBLIC_SUPABASE_URL = "https://jxpetflkciuldbpuayne.supabase.co"
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_r4c_guUTPxf2dCXJazFI1Q_CCW74Wfk"
+TMDB_API_KEY = "d56bcfcadcb42bd6bd72b2bf269e9cb7"
